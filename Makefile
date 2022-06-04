@@ -1,7 +1,7 @@
 all: build
 
 build:
-	pyinstaller --onefile src/qa.py
+	${HOME}pyinstaller --onefile src/qa.py
 	cp dist/qa ./
 
 clean: 
@@ -9,8 +9,9 @@ clean:
 
 install: all
 	mkdir -p ${DESTDIR}${PREFIX}/usr/bin
-	cp -f qa ${DESTDIR}${PREFIX}/usr/bin/qa
-	chmod 755 ${DESTDIR}${PREFIX}/usr/bin/qa
+	mkdir -p ${DESTDIR}${PREFIX}/usr/share/doc
+	install -Dm755 qa ${DESTDIR}${PREFIX}/usr/bin/qa
+	install -Dm644 README.md "${DESTDIR}${PREFIX}/usr/share/doc/qa"
 
-uninstall:
+uninstall: 
 	rm -f ${DESTDIR}${PREFIX}/usr/bin/qa
