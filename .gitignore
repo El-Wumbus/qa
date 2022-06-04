@@ -1,0 +1,6 @@
+build
+dist
+qa.spec
+*.tar.*
+__pycache__
+bin
