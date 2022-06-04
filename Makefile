@@ -1,7 +1,7 @@
 all: build
 
 build:
-	${HOME}pyinstaller --onefile src/qa.py
+	pyinstaller --onefile src/qa.py
 	cp dist/qa ./
 
 clean: 
