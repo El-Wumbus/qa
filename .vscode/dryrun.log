@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/mnt/starship-vault/documents/Git/qa'
+pyinstaller --onefile src/qa.py
+cp dist/qa ./
+make: Leaving directory '/mnt/starship-vault/documents/Git/qa'
+ 

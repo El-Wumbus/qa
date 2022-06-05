@@ -14,7 +14,8 @@ def usage():
     True
 
 def load(dir: str, archive_name: str, mode: str):
-    # Check if an archive exists and prompt the user
+    # Checking if the archive exists and if it does, it asks the user if they want to overwrite it. If
+    # they do, it removes the archive and then creates a new one.
     archive_exists = os.path.exists(archive_name)
     if archive_exists:
         overwrite = std.uconfirm(
@@ -29,6 +30,8 @@ def load(dir: str, archive_name: str, mode: str):
         os.remove(fullmetapath)
 
     # Create and write to the metafile
+    # Creating a file called metafile.qa in the directory that is being archived. It then writes the
+    # absolute path of the directory to the file. It then makes the archive and removes the metafile.
     metafile = open(fullmetapath, 'w')
     metafilecontents = (os.path.abspath(dir))
     metafile.write(metafilecontents)
@@ -48,12 +51,13 @@ def unload(archive_name: str):
     tmp = os.path.join(TEMPDIR, '/qa')
     stda.unarchive(archive_name, tmp)
 
-    # Read metafile
+    # Reading the metafile.qa file and getting the path of the directory that was archived.
     fullmetapath = os.path.join(tmp, 'metafile.qa')
     metafile = open(fullmetapath, 'r')
     metafilecontents = metafile.readline()
     metafile.close()
 
+    # Copying the files from the tmp directory to the directory that was held within the metafile.
     fullpath = tmp + "/*"
     if os.path.exists(os.path.join(fullmetapath)):
         os.remove(os.path.join(fullmetapath))
@@ -61,15 +65,21 @@ def unload(archive_name: str):
         print(file)
         shutil.copy2(file, metafilecontents)
 
+# Getting the arguments from the command line.
 argv = sys.argv
 argc = len(sys.argv)
 
+# Checking if the first argument is load or unload. If it is load, it will run the load function with
+# the second, third, and fourth arguments. If it is unload, it will run the unload function with the
+# second argument.
 if argv[1] == 'load':
+    if argc < 5: ERR("Too few arguments for the load function", 2)
     print(f"{argv[2]} {argv[3]} {argv[4]}")
     load(argv[2], argv[3], argv[4])
     sys.exit(0)
 
 elif argv[1] == 'unload':
+    if argc < 3: ERR("Too few arguments for the unload function", 2)
     unload(argv[2])
     sys.exit(0)
 
