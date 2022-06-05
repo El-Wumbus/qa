@@ -11,9 +11,21 @@ from time import sleep
 
 
 def usage():
-    True
+    True #coming soon, im too lazy to do it now
 
 def load(archive_dir: str, archive_name: str, mode: str):
+    """
+    It creates a file called metafile.qa in the directory that is being archived. It then writes the
+    absolute path of the directory to the file. It then makes the archive and removes the metafile.
+    
+    :param archive_dir: The directory that is being archived
+    :type archive_dir: str
+    :param archive_name: The name of the archive
+    :type archive_name: str
+    :param mode: This is the mode that the program is running in. It can be either "load" or "unload"
+    :type mode: str
+    :return: the absolute path of the directory that is being archived.
+    """
     # Checking if the archive exists and if it does, it asks the user if they want to overwrite it. If
     # they do, it removes the archive and then creates a new one.
     archive_exists = os.path.exists(archive_name)
@@ -36,11 +48,19 @@ def load(archive_dir: str, archive_name: str, mode: str):
     metafilecontents = (os.path.abspath(archive_dir))
     metafile.write(metafilecontents)
     metafile.close()
-    stda.makearchive(archive_dir, archive_name, None)  # make archive
+    stda.makearchive(archive_dir, archive_name, mode)  # make archive
     os.remove(os.path.join(os.path.abspath(archive_dir),
               "metafile.qa"))  # remove metafile
 
 def unload(archive_name: str):
+    """
+    It takes an archive file, decompresses it to a temporary directory, reads the metafile.qa file to
+    get the path of the directory that was archived, and then copies the files from the temporary
+    directory to the directory that was held within the metafile then deletes the metafile.
+    
+    :param archive_name: The name of the archive file
+    :type archive_name: str
+    """
     # Find tmp dir
     if platform.system() != 'Windows':
         TEMPDIR = '/tmp'
@@ -83,17 +103,12 @@ elif argv[1] == 'unload':
     unload(argv[2])
     sys.exit(0)
 
-compression_mode = 'xz'
 try:
-    opts, args = getopt.getopt(argv, 'i:d:vhC:o:', [
-                               "help", "verbose", "compression-type="])
+    opts, args = getopt.getopt(argv, 'h', [
+                               "help"])
 except getopt.GetoptError:
     std.ERR("Getops Error", 2)
 for opt, arg in opts:
     if opt == ('-h', "--help"):
         usage(0)
-    elif opt in ('-v', "--verbose"):
-        verbose = True
-    elif opt in ('-C', "--compression-type"):
-        compression_mode = arg
 
