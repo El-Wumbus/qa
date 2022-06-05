@@ -13,7 +13,7 @@ from time import sleep
 def usage():
     True
 
-def load(dir: str, archive_name: str, mode: str):
+def load(archive_dir: str, archive_name: str, mode: str):
     # Checking if the archive exists and if it does, it asks the user if they want to overwrite it. If
     # they do, it removes the archive and then creates a new one.
     archive_exists = os.path.exists(archive_name)
@@ -24,8 +24,8 @@ def load(dir: str, archive_name: str, mode: str):
             return(0)
         os.remove(archive_name)
 
-    adir = os.path.abspath(dir)
-    fullmetapath = os.path.join(adir, "metafile.qa")
+    absolute_dir = os.path.abspath(archive_dir)
+    fullmetapath = os.path.join(absolute_dir, "metafile.qa")
     if os.path.exists(fullmetapath):
         os.remove(fullmetapath)
 
@@ -33,11 +33,11 @@ def load(dir: str, archive_name: str, mode: str):
     # Creating a file called metafile.qa in the directory that is being archived. It then writes the
     # absolute path of the directory to the file. It then makes the archive and removes the metafile.
     metafile = open(fullmetapath, 'w')
-    metafilecontents = (os.path.abspath(dir))
+    metafilecontents = (os.path.abspath(archive_dir))
     metafile.write(metafilecontents)
     metafile.close()
-    stda.makearchive(dir, archive_name, None)  # make archive
-    os.remove(os.path.join(os.path.abspath(dir),
+    stda.makearchive(archive_dir, archive_name, None)  # make archive
+    os.remove(os.path.join(os.path.abspath(archive_dir),
               "metafile.qa"))  # remove metafile
 
 def unload(archive_name: str):

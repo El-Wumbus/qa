@@ -1,3 +1,5 @@
+macos=no
+
 all: build
 
 build:
@@ -7,7 +9,7 @@ build:
 clean: 
 	rm -rf build dist src/__pycache__ *.spec
 
-install: all
+install: build
 	mkdir -p ${DESTDIR}${PREFIX}/usr/bin
 	mkdir -p ${DESTDIR}${PREFIX}/usr/share/doc
 	install -Dm755 qa ${DESTDIR}${PREFIX}/usr/bin/qa

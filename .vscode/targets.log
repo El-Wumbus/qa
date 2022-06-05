@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Jun  5 00:50:55 2022
+# Make data base, printed on Sun Jun  5 13:54:22 2022
 
 # Variables
 
@@ -19,7 +19,7 @@ NO_AT_BRIDGE = 1
 # environment
 GTK_RC_FILES = /etc/gtk/gtkrc:/home/decator/.gtkrc:/home/decator/.config/gtkrc
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-3fa89975-a4be-428a-bb42-ce0d890428fe.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-c439eceb-01bc-48c3-bfa5-af59d557f5e4.sock
 # environment
 VSCODE_CWD = /home/decator
 # default
@@ -87,7 +87,7 @@ MAKEFILE_LIST := Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 3713
+VSCODE_PID = 476853
 # environment
 XDG_SESSION_TYPE = x11
 # environment
@@ -286,7 +286,6 @@ build:
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
 #  recipe to execute (from 'Makefile', line 4):
- 
 	pyinstaller --onefile src/qa.py
 	cp dist/qa ./
 
@@ -305,6 +304,7 @@ install: all
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+ 
 
 # files hash-table stats:
 # Load=8/1024=1%, Rehash=0, Collisions=0/23=0%
@@ -320,6 +320,6 @@ install: all
 # strcache performance: lookups = 35 / hit rate = 37%
 # hash-table stats:
 # Load=22/8192=0%, Rehash=0, Collisions=0/35=0%
-# Finished Make data base on Sun Jun  5 00:50:55 2022
+# Finished Make data base on Sun Jun  5 13:54:22 2022
 
  
