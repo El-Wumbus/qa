@@ -1,10 +1,18 @@
-macos=no
-
 all: build
 
 build:
 	pyinstaller --onefile src/qa.py
 	cp dist/qa ./
+
+autodoc:
+	cd docs
+	sphinx-apidoc -o . ../src --ext-autodoc
+	cd ..
+
+docs: autodoc
+	cd docs
+	make clean
+	make html
 
 clean: 
 	rm -rf build dist src/__pycache__ *.spec

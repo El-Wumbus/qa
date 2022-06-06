@@ -1,1 +1,1 @@
-{"buildTargets":["all","build","clean","install","uninstall"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}
+{"buildTargets":["all","autodoc","build","clean","docs","install","uninstall"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}

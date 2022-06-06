@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installaton &mdash; qa  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Usage" href="usage.html" />
+    <link rel="prev" title="Introduction" href="intro.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> qa
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installaton</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#from-pkgbuilds-arch-linux">From PKGBUILDS (Arch Linux)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#from-archlinux-repo-arch-linux">From archlinux-repo (Arch Linux)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#from-releases-linux-windows">From Releases (Linux/Windows)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#from-source-linux-macos">From Source (Linux/macOS)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#build-dependencies">Build Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-instructions">Build Instructions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#from-source-windows">From Source (Windows)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#build-dependencies-1">Build Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-instructions-1">Build Instructions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribution.html">Contribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Modules</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">qa</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Installaton</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/installation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="installaton">
+<h1>Installaton<a class="headerlink" href="#installaton" title="Permalink to this headline"></a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">qa</span></code> is a cross-platfrom application with slightly different
+installation instructions depending on your OS</p>
+<section id="from-pkgbuilds-arch-linux">
+<h2>From PKGBUILDS (Arch Linux)<a class="headerlink" href="#from-pkgbuilds-arch-linux" title="Permalink to this headline"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/el-wumbus/qa.git
+<span class="nb">cd</span> qa/PKGBUILDS
+
+<span class="c1"># If you want to install from latest release</span>
+<span class="nb">cd</span> qa-bin
+makepkg -si
+
+<span class="c1">#If you want to compile from source</span>
+<span class="nb">cd</span> qa-git
+makepkg -si
+</pre></div>
+</div>
+</section>
+<section id="from-archlinux-repo-arch-linux">
+<h2>From <a class="reference external" href="https://github.com/El-Wumbus/archlinux-repo">archlinux-repo</a> (Arch Linux)<a class="headerlink" href="#from-archlinux-repo-arch-linux" title="Permalink to this headline"></a></h2>
+<p>Add the repo acording to <a class="reference external" href="https://github.com/El-Wumbus/archlinux-repo/blob/Master/README.md">the instructions</a></p>
+</section>
+<section id="from-releases-linux-windows">
+<h2>From Releases (Linux/Windows)<a class="headerlink" href="#from-releases-linux-windows" title="Permalink to this headline"></a></h2>
+<p>Download the <a class="reference external" href="https://github.com/El-Wumbus/qa/releases/latest">latest
+release</a> for your
+platform. These are standalone, portable binary releases with the python
+interpreter and dependencies included in the binary.</p>
+</section>
+<section id="from-source-linux-macos">
+<h2>From Source (Linux/macOS)<a class="headerlink" href="#from-source-linux-macos" title="Permalink to this headline"></a></h2>
+<section id="build-dependencies">
+<h3>Build Dependencies<a class="headerlink" href="#build-dependencies" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>git (To clone the repo)</p></li>
+<li><p>python3</p></li>
+<li><p>pip</p></li>
+</ul>
+</section>
+<section id="build-instructions">
+<h3>Build Instructions<a class="headerlink" href="#build-instructions" title="Permalink to this headline"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/el-wumbus/qa.git
+<span class="nb">cd</span> ./qa
+pip3 -r requirements.txt
+make
+sudo make install
+</pre></div>
+</div>
+</section>
+</section>
+<section id="from-source-windows">
+<h2>From Source (Windows)<a class="headerlink" href="#from-source-windows" title="Permalink to this headline"></a></h2>
+<section id="build-dependencies-1">
+<span id="id1"></span><h3>Build Dependencies<a class="headerlink" href="#build-dependencies-1" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/git-for-windows/git/releases/latest">git</a> (To
+clone the repo)</p></li>
+<li><p><a class="reference external" href="https://www.python.org/downloads/windows/">python3</a></p></li>
+<li><p><a class="reference external" href="https://pip.pypa.io/en/stable/installation/">pip</a></p></li>
+</ul>
+</section>
+<section id="build-instructions-1">
+<span id="id2"></span><h3>Build Instructions<a class="headerlink" href="#build-instructions-1" title="Permalink to this headline"></a></h3>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="s2">&quot;https://github.com/el-wumbus/qa&quot;</span>
+<span class="nb">Set-Locaton</span> <span class="p">.\</span><span class="n">qa</span>
+<span class="n">pip3</span> <span class="n">-r</span> <span class="n">requirements</span><span class="p">.</span><span class="n">txt</span>
+<span class="n">pyinstaller</span> <span class="p">-</span><span class="n">-onefile</span> <span class="n">src</span><span class="p">\</span><span class="n">qa</span><span class="p">.</span><span class="n">py</span>
+<span class="nb">cp </span><span class="n">dist</span><span class="p">\</span><span class="n">qa</span><span class="p">.</span><span class="n">exe</span> <span class="p">.</span>
+</pre></div>
+</div>
+<p>The portable executable is located in the current directory.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="intro.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="usage.html" class="btn btn-neutral float-right" title="Usage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Aidan Neal.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

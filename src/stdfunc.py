@@ -1,3 +1,20 @@
+# qa -- a program that allows for single command compression and extraction an extra feature
+#     Copyright (C) 2022  Aidan Neal
+
+#     This program is free software: you can redistribute it and/or modify
+#     it under the terms of the GNU General Public License as published by
+#     the Free Software Foundation, either version 3 of the License, or
+#     (at your option) any later version.
+
+#     This program is distributed in the hope that it will be useful,
+#     but WITHOUT ANY WARRANTY; without even the implied warranty of
+#     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#     GNU General Public License for more details.
+
+#     You should have received a copy of the GNU General Public License
+#     along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+from rich import print as printf
 import sys
 def ERR(message:str, code:int):
   """
@@ -8,8 +25,8 @@ def ERR(message:str, code:int):
   :param code: The exit code to exit with
   :type code: int
   """
-  if message != None: print(message)
-  else: print("An unknown error has occured")
+  if message != None: printf(f"[bold red]{message}[/bold red] \[{code}\]")
+  else: printf("[bold red]An unknown error has occured![/bold red]")
 
   if code != None: sys.exit(code)
   else: sys.exit(1)

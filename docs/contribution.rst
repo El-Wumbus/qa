@@ -2,19 +2,17 @@ Contribution
 ============
 
 Prerequites & Dependencies
---------------------------
+**************************
 
 You'll need the ``git`` version control software installed. If you
 already have it installed ensure you update it to the latest version. To
 Build you will need the following:
 
--  `git <https://github.com/git-for-windows/git/releases/latest>`__ (To
-   clone the repo)
--  `python3 <https://www.python.org/downloads/windows/>`__
+-  `python3 <https://www.python.org/downloads/>`__
 -  `pip <https://pip.pypa.io/en/stable/installation/>`__
 
 Guidelines
-----------
+**********
 
 -  Don't change the formatting - Dont reformat or otherwise change the
    formatting of source code or documentation in the repo. Use the same
@@ -29,20 +27,23 @@ Guidelines
    indentation other than spaces. Use 2 or 4 space indentation. (4 space
    indentation is perferred)
 
--  Format documentation - All documentation is to be written in markdown
-   while formatting it similar to the ``README.rst`` document as to
-   ensure proper consistancy and readablility.
+-  Format documentation - All documentation is to be written in reStructuredText
+   while formatting it similar to the `this document 
+   <https://github.com/El-Wumbus/qa/blob/Master/docs/contribution.rst>`__ 
+   as to ensure proper consistancy and readablility.
 
 Get the Source code
--------------------
+*******************
 
 To get the source code you'll want to `fork the project on
 github <https://docs.github.com/en/get-started/quickstart/fork-a-repo>`__,
-then clone the fork with git. > Note: Learn how to set up an ssh key
-`here <https://docs.github.com/en/authentication/connecting-to-github-with-ssh>`__,
-or use an http(s) link in substitution.
+then clone the fork with git. 
 
-::
+.. pull-quote::
+   
+   Note: Learn how to set up an ssh key `here <https://docs.github.com/en/authentication/connecting-to-github-with-ssh>`__, or use an http(s) link in substitution.
+
+.. code:: bash
 
    git clone ssh://git@github.com/_your-username_/qa
    cd ./qa
@@ -52,26 +53,26 @@ This will download the entire repository including all revision history.
 To get the lastest commits you can pull instead of redownloaing the repo
 (only do this if you haven't made any changes):
 
-::
+.. code:: bash
 
    git pull
 
 *Before* you try to commit
---------------------------
+**************************
 
 To give proper ownership to commits you need to configure git to give
 you proper authorship. To do this you should edit your ``~/.gitconfig``
 (If it doesn't exist, make it) file to include something like the
 following, replacing the examples with your information of course.
 
-::
+.. code:: ini
 
    [user]
        name = john doe
-       email john.doe@example.com
+       email = john.doe@example.com
 
 Commiting
----------
+*********
 
 First, ensure that you know a commit is a local operation and only
 affects your local git repo.
@@ -79,7 +80,7 @@ affects your local git repo.
 check out all your changes to a sperate brach as was breifly shown
 previously:
 
-::
+.. code:: bash
 
    git checkout -b _branch_
 
@@ -92,15 +93,14 @@ previously:
 When changing or making new files be sure to let git know to track those
 files:
 
-::
+.. code:: bash
 
    git add _filename(s)_
 
 You can add (recusrively) everything in a directoy by specifing it in
-place of a file name. Remember that you can use wildcards as long as
-you're in a shell that supports them. For example:
+place of a file name. For example:
 
-::
+.. code:: bash
 
    git add .
 
@@ -116,7 +116,7 @@ commiting up-to-date changes. you can add a commit message with
 First get the new changes from the public repo after you ensure
 ``git diff`` gives no output.
 
-::
+.. code:: bash
 
    git checkout Master
    git pull
@@ -126,7 +126,7 @@ First get the new changes from the public repo after you ensure
 If there's no conflicts then you've rebased your branch. To push your
 changes you can do something like the following:
 
-::
+.. code:: bash
 
    git push -u origin _branch_
 

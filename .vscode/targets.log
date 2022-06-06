@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Jun  5 13:54:22 2022
+# Make data base, printed on Mon Jun  6 00:37:03 2022
 
 # Variables
 
@@ -19,7 +19,7 @@ NO_AT_BRIDGE = 1
 # environment
 GTK_RC_FILES = /etc/gtk/gtkrc:/home/decator/.gtkrc:/home/decator/.config/gtkrc
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-c439eceb-01bc-48c3-bfa5-af59d557f5e4.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-8c4665a3-6d45-4e22-8a0b-5228695da523.sock
 # environment
 VSCODE_CWD = /home/decator
 # default
@@ -198,6 +198,8 @@ QT_AUTO_SCREEN_SCALE_FACTOR = 0
 VSCODE_CLI = 1
 # environment
 ELECTRON_NO_ATTACH_CONSOLE = 1
+# makefile (from 'Makefile', line 1)
+macos = no
 # environment
 KDE_SESSION_VERSION = 5
 # default
@@ -207,7 +209,7 @@ KDE_FULL_SESSION = true
 # environment
 DOTNET_ROOT = /usr/share/dotnet
 # variable set hash-table stats:
-# Load=98/1024=10%, Rehash=0, Collisions=4/131=3%
+# Load=99/1024=10%, Rehash=0, Collisions=4/132=3%
 
 # Pattern-specific Variable Values
 
@@ -215,9 +217,9 @@ DOTNET_ROOT = /usr/share/dotnet
 
 # Directories
 
-# . (device 46, inode 169195): 13 files, no impossibilities.
+# . (device 46, inode 169195): 14 files, no impossibilities.
 
-# 13 files, no impossibilities in 1 directories.
+# 14 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -225,10 +227,19 @@ DOTNET_ROOT = /usr/share/dotnet
 
 # Files
 
+docs: autodoc
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 15):
+	cd docs
+	make clean
+	make html
+
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-04 10:24:42.107346255
+#  Last modified 2022-06-06 00:05:32.631824371
 #  File has been updated.
 #  Successfully updated.
 
@@ -236,15 +247,24 @@ uninstall:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 17):
+#  recipe to execute (from 'Makefile', line 29):
 	rm -f ${DESTDIR}${PREFIX}/usr/bin/qa
 
 clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 8):
+#  recipe to execute (from 'Makefile', line 20):
 	rm -rf build dist src/__pycache__ *.spec
+
+autodoc:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 10):
+	cd docs
+	sphinx-apidoc -o . ../src --ext-autodoc
+	cd ..
 
 # Not a target:
 .DEFAULT:
@@ -285,15 +305,15 @@ build:
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from 'Makefile', line 4):
+#  recipe to execute (from 'Makefile', line 6):
 	pyinstaller --onefile src/qa.py
 	cp dist/qa ./
 
-install: all
+install: build
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 11):
+#  recipe to execute (from 'Makefile', line 23):
 	mkdir -p ${DESTDIR}${PREFIX}/usr/bin
 	mkdir -p ${DESTDIR}${PREFIX}/usr/share/doc
 	install -Dm755 qa ${DESTDIR}${PREFIX}/usr/bin/qa
@@ -304,22 +324,22 @@ install: all
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
 
 # files hash-table stats:
-# Load=8/1024=1%, Rehash=0, Collisions=0/23=0%
+# Load=10/1024=1%, Rehash=0, Collisions=0/26=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 22 / storage = 176 B / avg = 8 B
-# current buf: size = 8162 B / used = 176 B / count = 22 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 24 / storage = 207 B / avg = 8 B
+ 
+# current buf: size = 8162 B / used = 207 B / count = 24 / avg = 8 B
 
-# strcache performance: lookups = 35 / hit rate = 37%
+# strcache performance: lookups = 41 / hit rate = 41%
 # hash-table stats:
-# Load=22/8192=0%, Rehash=0, Collisions=0/35=0%
-# Finished Make data base on Sun Jun  5 13:54:22 2022
+# Load=24/8192=0%, Rehash=0, Collisions=0/41=0%
+# Finished Make data base on Mon Jun  6 00:37:03 2022
 
  

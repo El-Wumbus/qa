@@ -119,4 +119,4 @@ Development
 
 You may make pull requests to change documentation or source code. Find
 more information on how to contribute in
-`CONTRIBUTION <https://github.com/El-Wumbus/qa/blob/Master/CONTRIBUTION.rst>`__
+`CONTRIBUTION <https://github.com/El-Wumbus/qa/blob/Master/docs/contribution.rst>`__
