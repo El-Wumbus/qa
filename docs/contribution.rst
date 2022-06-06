@@ -5,7 +5,7 @@ Prerequites & Dependencies
 **************************
 
 You'll need the ``git`` version control software installed. If you
-already have it installed ensure you update it to the latest version. To
+already have it installed, ensure you update it to the latest version. To
 Build you will need the following:
 
 -  `python3 <https://www.python.org/downloads/>`__
