@@ -20,12 +20,6 @@ From PKGBUILDS (Arch Linux)
    cd qa-git
    makepkg -si
    
-From `archlinux-repo <https://github.com/El-Wumbus/archlinux-repo>`__ (Arch Linux)
-**********************************************************************************
-
-Add the repo acording to `the instructions <https://github.com/El-Wumbus/archlinux-repo/blob/Master/README.md>`__,
-then install with `sudo pacman -Syy qa`
-   
 From Releases (Linux/Windows)
 *****************************
 
