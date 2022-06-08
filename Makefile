@@ -2,21 +2,13 @@ all: build
 
 build:
 	pyinstaller --onefile src/qa.py
-	cp dist/qa ./
+	mv dist/qa "bin/qa-linux-$(shell printf 'r.$(shell git rev-list --count HEAD)')-$(shell date +%s)"
 
-
-docs:
-	printf "cd docs\n\
-	sphinx-apidoc -o . ../src --ext-autodoc\n\
-	make clean\n\
-	make html\n\
-	cd ..\n"
+sums:
+	$(shell sha256sum bin/qa* > bin/sha256sums)
 
 clean: 
-	rm -rf build dist src/__pycache__ *.spec
-	cd docs
-	bash -c "make clean"
-	cd ..
+	rm -rf build dist src/__pycache__ *.spec docs/_build
 
 install: build
 	mkdir -p ${DESTDIR}${PREFIX}/usr/bin

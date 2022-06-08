@@ -15,13 +15,11 @@
 #     You should have received a copy of the GNU General Public License
 #     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-import subprocess
 from posixpath import abspath
 import os
 from lib import stdfile, io
 import sys
 import platform
-import shutil
 from glob import glob
 import getopt
 from time import sleep
@@ -135,7 +133,6 @@ def unload(archive_name: str, force=False):
     console.log(f"Extracting \"{archive_name}\"")
     tmp = os.path.join(TEMPDIR, 'qa')
     stdfile.unarchive(archive_name, tmp)
-    subprocess.call(f"ls {tmp}", shell=True)
     console.log(f"[#7289DA]Decompressed[/] \"{archive_name}\"")
 
     # Reading the metafile.qa file and getting the path of the directory that was archived.
