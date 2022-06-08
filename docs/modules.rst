@@ -5,5 +5,4 @@ Modules
    :maxdepth: 4
 
    qa
-   stdarc
-   stdfunc
+   lib

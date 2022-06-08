@@ -10,20 +10,21 @@ From PKGBUILDS (Arch Linux)
 .. code:: bash 
 
    git clone https://github.com/el-wumbus/qa.git
-   cd qa/PKGBUILDS
+   cd qa/archpkg
    
    # If you want to install from latest release
    cd qa-bin
    makepkg -si
 
-   #If you want to compile from source
+   #If you want to build from source
    cd qa-git
    makepkg -si
    
 From `archlinux-repo <https://github.com/El-Wumbus/archlinux-repo>`__ (Arch Linux)
 **********************************************************************************
 
-Add the repo acording to `the instructions <https://github.com/El-Wumbus/archlinux-repo/blob/Master/README.md>`__
+Add the repo acording to `the instructions <https://github.com/El-Wumbus/archlinux-repo/blob/Master/README.md>`__,
+then install with `sudo pacman -Syy qa`
    
 From Releases (Linux/Windows)
 *****************************

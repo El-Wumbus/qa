@@ -13,18 +13,20 @@ The function declaration:
 
 .. code:: python
 
-   def load(archive_dir: str, archive_name: str, mode: str):
+   def load(archive_dir: str, archive_name: str, mode: str, force=False):
 
 - ``archive_dir`` is the directory targeted for compression. (i.e. ``$HOME/.config``) 
 - ``archive_name`` is the name of the desired archive file. (i.e. ``config.tar.xz``)
 - ``mode`` is the compression type desired for the file. (i.e. ``xz``)
+- ``force`` activated by the ``--force`` flag, skips all warnings and prompts relating to overwritng files 
 
 Example:
 ~~~~~~~~
 
 .. code:: bash
 
-   qa load "$HOME/.config" config.tar.xz xz
+   qa load "$HOME/.config" config.tar.xz xz -f # -f and --force are equavalant
+
 .. pull-quote::
 
   If this archive were to be unloaded it would be extracted to ``$HOME/.config`` 
@@ -37,10 +39,11 @@ The function declaration:
 
 .. code:: python
 
-   def unload(archive_name: str):
+   def unload(archive_name: str, force=False):
 
 - ``archive_name`` is the archive targeted for decompression. 
-  
+- ``force`` activated by the ``--force`` flag, skips all warnings and prompts relating to overwritng files 
+
 The archive gets decompressed to the directory that was original compressed.
 
 Example:

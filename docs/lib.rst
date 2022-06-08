@@ -1,7 +1,7 @@
-stdfunc module
-==============
+lib module
+==========
 
-.. automodule:: stdfunc
+.. automodule:: lib
    :members:
    :undoc-members:
    :show-inheritance:

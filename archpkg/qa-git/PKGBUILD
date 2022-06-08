@@ -14,17 +14,18 @@ source=("qa::git+https://github.com/El-Wumbus/qa.git#branch=Master")
 sha256sums=('SKIP')
 
 pkgver() {
-	cd "qa"
+	cd "$_pkgname"
 	printf "r%s.$s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
 build() {
+	cd "$_pkgname"
 	pip install pyinstaller
-	cd "qa"
+
 	make
 }
 
 package() {
-	cd "qa"
+	cd "$_pkgname"
 	sudo make DESTDIR="${pkgdir}" install
 }

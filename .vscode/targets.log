@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jun  6 00:37:03 2022
+# Make data base, printed on Tue Jun  7 21:12:37 2022
 
 # Variables
 
@@ -19,11 +19,17 @@ NO_AT_BRIDGE = 1
 # environment
 GTK_RC_FILES = /etc/gtk/gtkrc:/home/decator/.gtkrc:/home/decator/.config/gtkrc
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-8c4665a3-6d45-4e22-8a0b-5228695da523.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d6470cbb-555d-4720-8a5c-dba5e2272991.sock
 # environment
-VSCODE_CWD = /home/decator
+VSCODE_CWD = /mnt/starship-vault/documents/Git/textual-test
+# environment
+WINDOWID = 104857611
+# environment
+zshrc = /home/decator/.zshrc
 # default
 MAKE_COMMAND := make
+# environment
+VSCODE_GIT_ASKPASS_EXTRA_ARGS = --ms-enable-electron-run-as-node
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # environment
@@ -35,11 +41,13 @@ PWD = /mnt/starship-vault/documents/Git/qa
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
+LSCOLORS = Gxfxcxdxbxegedabagacad
+# environment
 MAIL = /var/spool/mail/decator
 # environment
 XDG_DATA_DIRS = /usr/local/share:/usr/share:/var/lib/snapd/desktop
 # environment
-OLDPWD = /home/decator
+OLDPWD = /mnt/starship-vault/documents/Git
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
@@ -58,6 +66,8 @@ XAUTHORITY = /home/decator/.Xauthority
 .LOADED := 
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# environment
+GITHUB_PASSWORD = PJ9CBNeyDd7s
 # makefile
 MAKEFLAGS = pqrR
 # makefile
@@ -73,9 +83,13 @@ MFLAGS = -pqrR
 # default
 .SHELLFLAGS := -c
 # environment
+GITHUB_USER = el-wmbus
+# environment
 XDG_CONFIG_DIRS = /home/decator/.config/kdedefaults:/etc/xdg
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
+# environment
+GIT_ASKPASS = /opt/visual-studio-code/resources/app/extensions/git/dist/askpass.sh
 # environment
 XCURSOR_THEME = WhiteSur-cursors
 # environment
@@ -84,6 +98,8 @@ XDG_SESSION_DESKTOP = KDE
 MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
+# environment
+ZSH = /home/decator/.oh-my-zsh
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
@@ -115,21 +131,31 @@ MAKECMDGOALS := all
 # environment
 DOTNET_BUNDLE_EXTRACT_BASE_DIR = /home/decator/.cache/dotnet_bundle_extract
 # environment
-SHLVL = 1
+SHLVL = 5
+# environment
+TERMINFO = /usr/lib/kitty/terminfo
 # environment
 MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /usr/local/sbin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/opt/cuda/nsight_compute:/opt/cuda/nsight_systems/bin:/home/decator/.dotnet/tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin
+PATH = /home/decator/.local/bin:/home/decator/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/opt/cuda/nsight_compute:/opt/cuda/nsight_systems/bin:/home/decator/.dotnet/tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin
 # default
 MAKEFILES := 
+# environment
+VSCODE_GIT_IPC_HANDLE = /run/user/1000/vscode-git-b882cb2298.sock
+# environment
+VSCODE_GIT_ASKPASS_NODE = /opt/visual-studio-code/code
 # environment
 MOTD_SHOWN = pam
 # automatic
 ^F = $(notdir $^)
 # environment
+VSCODE_GIT_ASKPASS_MAIN = /opt/visual-studio-code/resources/app/extensions/git/dist/askpass-main.js
+# environment
 VSCODE_LOG_NATIVE = false
+# environment
+TERM_PROGRAM = vscode
 # automatic
 ?F = $(notdir $?)
 # environment
@@ -138,10 +164,14 @@ KDE_APPLICATIONS_AS_SCOPE = 1
 XDG_SEAT = seat0
 # environment
 XDG_CURRENT_DESKTOP = KDE
+# environment
+LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.swp=00;90:*.tmp=00;90:*.dpkg-dist=00;90:*.dpkg-old=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:
 # automatic
 +F = $(notdir $+)
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
+# environment
+LESS = -R
 # environment
 DESKTOP_SESSION = plasma
 # environment
@@ -157,6 +187,10 @@ XDG_VTNR = 1
 # environment
 SYSTEMD_EXEC_PID = 2563
 # environment
+KITTY_WINDOW_ID = 1
+# environment
+EDITOR = vim
+# environment
 DISPLAY = :0
 # environment
 GTK_MODULES = canberra-gtk-module
@@ -167,9 +201,15 @@ MAKE_VERSION := 4.3
 # environment
 KDE_SESSION_UID = 1000
 # environment
+KITTY_PID = 980162
+# environment
+PAGER = less
+# environment
 _ = /usr/bin/make
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
+# environment
+COLORTERM = truecolor
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -182,6 +222,8 @@ HOME = /home/decator
 ELECTRON_RUN_AS_NODE = 1
 # environment
 VSCODE_IPC_HOOK = /run/user/1000/vscode-a235b190-1.67.2-main.sock
+# environment
+TERM = xterm-256color
 # environment
 XDG_SESSION_ID = 2
 # environment
@@ -198,18 +240,20 @@ QT_AUTO_SCREEN_SCALE_FACTOR = 0
 VSCODE_CLI = 1
 # environment
 ELECTRON_NO_ATTACH_CONSOLE = 1
-# makefile (from 'Makefile', line 1)
-macos = no
 # environment
 KDE_SESSION_VERSION = 5
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink guile load
 # environment
+KITTY_INSTALLATION_DIR = /usr/lib/kitty
+# environment
 KDE_FULL_SESSION = true
+# environment
+TERM_PROGRAM_VERSION = 1.67.2
 # environment
 DOTNET_ROOT = /usr/share/dotnet
 # variable set hash-table stats:
-# Load=99/1024=10%, Rehash=0, Collisions=4/132=3%
+# Load=121/1024=12%, Rehash=0, Collisions=7/154=5%
 
 # Pattern-specific Variable Values
 
@@ -217,9 +261,9 @@ DOTNET_ROOT = /usr/share/dotnet
 
 # Directories
 
-# . (device 46, inode 169195): 14 files, no impossibilities.
+# . (device 46, inode 169195): 13 files, no impossibilities.
 
-# 14 files, no impossibilities in 1 directories.
+# 13 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -231,7 +275,7 @@ docs: autodoc
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 15):
+#  recipe to execute (from 'Makefile', line 13):
 	cd docs
 	make clean
 	make html
@@ -239,7 +283,8 @@ docs: autodoc
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-06 00:05:32.631824371
+ 
+#  Last modified 2022-06-06 01:43:06.65325628
 #  File has been updated.
 #  Successfully updated.
 
@@ -247,21 +292,21 @@ uninstall:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 29):
+#  recipe to execute (from 'Makefile', line 27):
 	rm -f ${DESTDIR}${PREFIX}/usr/bin/qa
 
 clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 20):
+#  recipe to execute (from 'Makefile', line 18):
 	rm -rf build dist src/__pycache__ *.spec
 
 autodoc:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 10):
+#  recipe to execute (from 'Makefile', line 8):
 	cd docs
 	sphinx-apidoc -o . ../src --ext-autodoc
 	cd ..
@@ -305,7 +350,7 @@ build:
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from 'Makefile', line 6):
+#  recipe to execute (from 'Makefile', line 4):
 	pyinstaller --onefile src/qa.py
 	cp dist/qa ./
 
@@ -313,7 +358,7 @@ install: build
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 23):
+#  recipe to execute (from 'Makefile', line 21):
 	mkdir -p ${DESTDIR}${PREFIX}/usr/bin
 	mkdir -p ${DESTDIR}${PREFIX}/usr/share/doc
 	install -Dm755 qa ${DESTDIR}${PREFIX}/usr/bin/qa
@@ -333,13 +378,12 @@ install: build
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 24 / storage = 207 B / avg = 8 B
- 
-# current buf: size = 8162 B / used = 207 B / count = 24 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 23 / storage = 190 B / avg = 8 B
+# current buf: size = 8162 B / used = 190 B / count = 23 / avg = 8 B
 
-# strcache performance: lookups = 41 / hit rate = 41%
+# strcache performance: lookups = 40 / hit rate = 42%
 # hash-table stats:
-# Load=24/8192=0%, Rehash=0, Collisions=0/41=0%
-# Finished Make data base on Mon Jun  6 00:37:03 2022
+# Load=23/8192=0%, Rehash=0, Collisions=0/40=0%
+# Finished Make data base on Tue Jun  7 21:12:37 2022
 
  
