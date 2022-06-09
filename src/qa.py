@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 # qa -- a program that allows for single command compression and extraction an extra feature
 #     Copyright (C) 2022  Aidan Neal
 
@@ -104,6 +105,7 @@ def load(archive_dir: str, archive_name: str, mode: str, force=False):
     console.log(
         f"Creating \"{archive_name}\" from \"{archive_dir}\" with {mode} compression")
     stdfile.makearchive(archive_dir, archive_name, mode)  # make archive
+    console.log(f"Created \"{archive_dir}\"")
     os.remove(os.path.join(os.path.abspath(archive_dir),
               "metafile.qa"))  # remove metafile
 
