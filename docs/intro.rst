@@ -2,7 +2,7 @@ Introduction
 ============
 
 *quick archival.* is a program that allows for single command compression
-and extraction using ``xz``, ``gz``, and ``bz2`` compression (*there's more coming*).
+and extraction using ``xz``.
 
 | This script compresses an archive of a directory that includes
   information of where the archive should be decompressed. 

@@ -2,7 +2,7 @@ QA
 ==
 
 *quick archival.* A program that allows for single command compression
-and extraction using ``xz``, ``gz``, and ``bz2`` compression
+and extraction using ``xz`` compression
 
 | This script compresses an archive of a directory that includes
   information of where the archive should be decompressed.

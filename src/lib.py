@@ -27,27 +27,17 @@ class stdfile:
         else:
             raise
 
-    def makearchive(path: str, archive_name: str, compression_mode: str):
+    def makearchive(path: str, archive_name: str):
         """
-        Takes a path to a directory, an archive name, and a compression mode, and creates a tar archive
-        of the directory with the given compression mode
+        Takes a path to a directory, an archive name, and creates a tar archive
+        of the directory with xz compresion
 
         :param path: The path to the directory you want to archive
         :type path: str
         :param archive_name: The name of the archive you want to create
         :type archive_name: str
-        :param compression_mode: The compression mode to use. Can be "xz", "gz", or "bz2"
         :type compression_mode: str
         """
-        if compression_mode == None or compression_mode == "xz":
-            tarmode = "w:xz"
-        elif compression_mode == "gz":
-            tarmode = "w:gz"
-        elif compression_mode == "bz2":
-            tarmode = "w:bz2"
-        else:
-            io.ERR(
-                f"Compression type '{compression_mode}' is not supported", 1)
 
         # Creating a tarfile object, and then adding the path to the tarfile object.
         with tarfile.open(archive_name, tarmode) as tar:
@@ -64,9 +54,9 @@ class stdfile:
         :type output_path: str
         """
         # Opening the archive, extracting all the files to the output path, and then closing the archive.
-        tar = tarfile.open(archive_name)
-        tar.extractall(output_path)
-        tar.close()
+        with closing(tarfile.open(archive_name, f"r:xz")) as archive_name:
+            archive.extractall(path=output_path)
+        
 
     def tmpdir(platform: str):
         """

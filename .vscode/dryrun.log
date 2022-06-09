@@ -1,7 +1,6 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/mnt/starship-vault/documents/Git/qa'
- 
 pyinstaller --onefile src/qa.py
-mv dist/qa "bin/qa-linux-r.14-1654750540"
+mv dist/qa "bin/qa-linux-r.16-1654771905"
 make: Leaving directory '/mnt/starship-vault/documents/Git/qa'
  

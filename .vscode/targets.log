@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jun  9 00:55:40 2022
+# Make data base, printed on Thu Jun  9 06:51:45 2022
 
 # Variables
 
@@ -19,7 +19,7 @@ NO_AT_BRIDGE = 1
 # environment
 GTK_RC_FILES = /etc/gtk/gtkrc:/home/decator/.gtkrc:/home/decator/.config/gtkrc
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-c098d4bf-88d5-468c-b5d8-ca11fb58835f.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-620e0eb1-621e-4cff-a195-41830705b0ac.sock
 # environment
 VSCODE_CWD = /home/decator
 # default
@@ -133,7 +133,6 @@ VSCODE_LOG_NATIVE = false
 # automatic
 ?F = $(notdir $?)
 # environment
- 
 KDE_APPLICATIONS_AS_SCOPE = 1
 # environment
 XDG_SEAT = seat0
@@ -289,6 +288,7 @@ build:
 # variable set hash-table stats:
 # Load=9/32=28%, Rehash=0, Collisions=1/23=4%
 #  recipe to execute (from 'Makefile', line 4):
+ 
 	pyinstaller --onefile src/qa.py
 	mv dist/qa "bin/qa-linux-$(shell printf 'r.$(shell git rev-list --count HEAD)')-$(shell date +%s)"
 
@@ -329,6 +329,6 @@ install: build
 # strcache performance: lookups = 38 / hit rate = 36%
 # hash-table stats:
 # Load=24/8192=0%, Rehash=0, Collisions=0/38=0%
-# Finished Make data base on Thu Jun  9 00:55:40 2022
+# Finished Make data base on Thu Jun  9 06:51:45 2022
 
  

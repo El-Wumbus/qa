@@ -47,12 +47,12 @@ def usage():
     """
     printf(
         f"usage:: [bold #5865F2]{PROGRAM_NAME}[/] -- \[[#4E5D94]load[/]|[#7289DA]unload[/]]\
-[#4E5D94]target_dir\[load][/] [#7289DA]target-archive.tar.xz\[[#454FBF]both[/]][/] [#4E5D94]compression_type(gz, xz, bz2)\[load][/] ")
+[#4E5D94]target_dir\[load][/] [#7289DA]target-archive.tar.xz\[[#454FBF]both[/]][/]")
     printf(
-        f"example:: [bold #5865F2]{PROGRAM_NAME}[/] load \"[bold red]$HOME[/]/.config\" \"./config.tar.xz\" xz")
+        f"example:: [bold #5865F2]{PROGRAM_NAME}[/] load \"[bold red]$HOME[/]/.config\" \"./config.tar.xz\"")
 
 
-def load(archive_dir: str, archive_name: str, mode: str, force=False):
+def load(archive_dir: str, archive_name: str,force=False):
     """
     It creates a file called metafile.qa in the directory that is being archived. It then writes the
     absolute path of the directory to the file. It then makes the archive and removes the metafile.
@@ -61,7 +61,6 @@ def load(archive_dir: str, archive_name: str, mode: str, force=False):
     :type archive_dir: str
     :param archive_name: The name of the archive
     :type archive_name: str
-    :param mode: This is the compression used. Can be 'xz', 'gz', or 'bz2'.
     :type mode: str
     """
 
@@ -104,7 +103,7 @@ def load(archive_dir: str, archive_name: str, mode: str, force=False):
     metafile.close()
     console.log(
         f"Creating \"{archive_name}\" from \"{archive_dir}\" with {mode} compression")
-    stdfile.makearchive(archive_dir, archive_name, mode)  # make archive
+    stdfile.makearchive(archive_dir, archive_name)  # make archive
     console.log(f"Created \"{archive_dir}\"")
     os.remove(os.path.join(os.path.abspath(archive_dir),
               "metafile.qa"))  # remove metafile
@@ -201,9 +200,9 @@ def main():
     # Checking if the first argument is load or unload. If it is load, it checks if there are at least 4
     # arguments. If there are, it runs the load function. If there are not, it prints an error message.
     if args[0] == 'load':
-        if argsc < 4:
+        if argsc < 3:
             io.ERR("Too few arguments for the load function", 2)
-        load(args[1], args[2], args[3], force=doforce)
+        load(args[1], args[2], force=doforce)
         sys.exit(0)
 
     # If the first argument is unload, it checks if there is at least 1 argument. If there is, it runs
