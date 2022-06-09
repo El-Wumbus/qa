@@ -77,8 +77,7 @@ Commiting
 First, ensure that you know a commit is a local operation and only
 affects your local git repo.
 
-check out all your changes to a sperate brach as was breifly shown
-previously:
+check out all your changes to a sperate brach:
 
 .. code:: bash
 

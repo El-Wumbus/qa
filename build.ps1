@@ -1,1 +1,3 @@
-C:\Users\aidan\AppData\Local\Programs\Python\Python310\Scripts\pyinstaller.exe --onefile src/qa.py
+~\AppData\Local\Programs\Python\Python310\Scripts\pyinstaller.exe --onefile src/qa.py
+
+mv 

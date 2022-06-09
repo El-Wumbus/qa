@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jun  8 00:11:55 2022
+# Make data base, printed on Thu Jun  9 00:55:40 2022
 
 # Variables
 
@@ -19,7 +19,7 @@ NO_AT_BRIDGE = 1
 # environment
 GTK_RC_FILES = /etc/gtk/gtkrc:/home/decator/.gtkrc:/home/decator/.config/gtkrc
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-28bcb3c3-744f-438c-94ce-eeafb5f808de.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-c098d4bf-88d5-468c-b5d8-ca11fb58835f.sock
 # environment
 VSCODE_CWD = /home/decator
 # default
@@ -87,7 +87,7 @@ MAKEFILE_LIST := Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 4141
+VSCODE_PID = 173515
 # environment
 XDG_SESSION_TYPE = x11
 # environment
@@ -133,6 +133,7 @@ VSCODE_LOG_NATIVE = false
 # automatic
 ?F = $(notdir $?)
 # environment
+ 
 KDE_APPLICATIONS_AS_SCOPE = 1
 # environment
 XDG_SEAT = seat0
@@ -207,7 +208,7 @@ KDE_FULL_SESSION = true
 # environment
 DOTNET_ROOT = /usr/share/dotnet
 # variable set hash-table stats:
-# Load=98/1024=10%, Rehash=0, Collisions=4/128=3%
+# Load=98/1024=10%, Rehash=0, Collisions=4/140=3%
 
 # Pattern-specific Variable Values
 
@@ -215,9 +216,9 @@ DOTNET_ROOT = /usr/share/dotnet
 
 # Directories
 
-# . (device 46, inode 169195): 17 files, no impossibilities.
+# . (device 46, inode 169195): 14 files, no impossibilities.
 
-# 17 files, no impossibilities in 1 directories.
+# 14 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -228,7 +229,7 @@ DOTNET_ROOT = /usr/share/dotnet
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-08 00:05:10.972610716
+#  Last modified 2022-06-08 19:16:36.92860588
 #  File has been updated.
 #  Successfully updated.
 
@@ -257,23 +258,46 @@ all: build
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/12=0%
 
+# 'override' directive
+build: .SHELLSTATUS := 0
 build:
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-07 23:45:03.96949212
+#  Implicit/static pattern stem: ''
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := build
+# automatic
+# * := 
+# automatic
+# < := 
+# automatic
+# + := 
+# automatic
+# % := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=9/32=28%, Rehash=0, Collisions=1/23=4%
 #  recipe to execute (from 'Makefile', line 4):
 	pyinstaller --onefile src/qa.py
 	mv dist/qa "bin/qa-linux-$(shell printf 'r.$(shell git rev-list --count HEAD)')-$(shell date +%s)"
 
-sums: "bin/qa.spec"
+sums:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 8):
-	sha256sum "bin/$(wildcard qa*)" > "bin/$(wildcard qa*).sha256sum"
+	$(shell sha256sum bin/qa* > bin/sha256sums)
 
 install: build
 #  Implicit rule search has not been done.
@@ -283,29 +307,28 @@ install: build
 	mkdir -p ${DESTDIR}${PREFIX}/usr/bin
 	mkdir -p ${DESTDIR}${PREFIX}/usr/share/doc
 	install -Dm755 qa ${DESTDIR}${PREFIX}/usr/bin/qa
-	install -Dm644 README.md "${DESTDIR}${PREFIX}/usr/share/doc/qa"
+	install -Dm644 README.rst "${DESTDIR}${PREFIX}/usr/share/doc/qa"
 
 # Not a target:
- 
-"bin/qa.spec":
+.SUFFIXES:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=10/1024=1%, Rehash=0, Collisions=0/25=0%
+# Load=9/1024=1%, Rehash=0, Collisions=0/24=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 27 / storage = 222 B / avg = 8 B
-# current buf: size = 8162 B / used = 222 B / count = 27 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 24 / storage = 195 B / avg = 8 B
+# current buf: size = 8162 B / used = 195 B / count = 24 / avg = 8 B
 
-# strcache performance: lookups = 41 / hit rate = 34%
+# strcache performance: lookups = 38 / hit rate = 36%
 # hash-table stats:
-# Load=27/8192=0%, Rehash=0, Collisions=0/41=0%
-# Finished Make data base on Wed Jun  8 00:11:55 2022
+# Load=24/8192=0%, Rehash=0, Collisions=0/38=0%
+# Finished Make data base on Thu Jun  9 00:55:40 2022
 
  
