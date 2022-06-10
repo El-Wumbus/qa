@@ -29,6 +29,7 @@ import rich.progress
 from rich.prompt import Confirm
 from rich import print as printf
 from rich.traceback import install
+import shutil
 
 # Installing the rich.traceback module.
 install()
@@ -52,7 +53,7 @@ def usage():
         f"example:: [bold #5865F2]{PROGRAM_NAME}[/] load \"[bold red]$HOME[/]/.config\" \"./config.tar.xz\"")
 
 
-def load(archive_dir: str, archive_name: str,force=False):
+def load(archive_dir: str, archive_name: str, force=False):
     """
     It creates a file called metafile.qa in the directory that is being archived. It then writes the
     absolute path of the directory to the file. It then makes the archive and removes the metafile.
@@ -64,6 +65,25 @@ def load(archive_dir: str, archive_name: str,force=False):
     :type mode: str
     """
 
+    # Getting the path of the tmp directory.
+    TEMPDIR = stdfile.tmpdir(hostplatform)
+    tmp = os.path.join(TEMPDIR, 'qa')
+
+    # Clear any pre-existing files in tmp
+    if os.path.exists(tmp):
+        shutil.rmtree(tmp)
+        os.mkdir(tmp)
+    else:
+        os.mkdir(tmp)
+    
+    if os.path.isfile(archive_dir):
+        wasfile = True
+        stdfile.copyall(archive_dir, tmp)
+        archive_dir = tmp
+    else:
+        printf("no")
+        wasfile = False
+        
     # Checking if the host platform is Windows. If it is, it adds a backslash to the end of the
     # archive_dir variable. If it isn't, it adds a forward slash to the end of the archive_dir
     # variable.
@@ -74,16 +94,12 @@ def load(archive_dir: str, archive_name: str,force=False):
         if not archive_dir.endswith("\\"):
             archive_dir = archive_dir + "\\"
 
-    # Getting the path of the tmp directory.
-    TEMPDIR = stdfile.tmpdir(hostplatform)
-    tmp = os.path.join(TEMPDIR, 'qa')
-
     # Checking if the archive exists and if it does, it asks the user if they want to overwrite it. If
     # they do, it removes the archive.
     archive_exists = os.path.exists(archive_name)
     if archive_exists and not force:
         overwrite = Confirm.ask(
-            f"File '{archive_name}' already exists. Overwrite?")
+            f"File \"{archive_name}\" already exists. Overwrite?")
         if not overwrite:
             return(0)
         console.log(f"Removing \"{archive_name}\"")
@@ -101,12 +117,22 @@ def load(archive_dir: str, archive_name: str,force=False):
     metafile = open(fullmetapath, 'w')
     metafile.write(metafilecontents)
     metafile.close()
-    console.log(
-        f"Creating \"{archive_name}\" from \"{archive_dir}\" with {mode} compression")
+    
+    # Checking if the archive_dir is a file. If it is, it prints a different message.
+    if not wasfile:
+        console.log(
+            f"Creating \"{archive_name}\" from \"{archive_dir}\"")
+    else:
+        console.log(
+            f"Creating \"{archive_name}\"")
+        
     stdfile.makearchive(archive_dir, archive_name)  # make archive
-    console.log(f"Created \"{archive_dir}\"")
+    console.log(f"Created \"{archive_name}\"")
     os.remove(os.path.join(os.path.abspath(archive_dir),
               "metafile.qa"))  # remove metafile
+
+    if os.path.exists(tmp):
+        shutil.rmtree(tmp)
 
 
 def unload(archive_name: str, force=False):
@@ -120,9 +146,9 @@ def unload(archive_name: str, force=False):
     :type archive_name: str
     :param force: If set to True, it will overwrite any files that already 
     exists without asking, defaults to False (optional)
-    
+
     """
-    
+
     # Checking if the archive_name is a directory. If it is, it prints an error message.
     if os.path.isdir(archive_name):
         io.ERR(f"\"{archive_name}\" is a directory, not a file!", 1)

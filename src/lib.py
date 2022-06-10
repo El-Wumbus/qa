@@ -5,6 +5,7 @@ from sys import exit
 import os.path
 import shutil
 import errno
+from contextlib import closing
 
 
 class stdfile:
@@ -19,6 +20,12 @@ class stdfile:
         :param destination: The destination directory where the files will be copied to
         :type destination: str
         """
+
+        if not os.path.exists(source):
+            return(1)
+        if not os.path.exists(destination):
+            return(1)
+
         try:
             shutil.copytree(source, destination)
         except OSError as exc:  # python >2.5
@@ -40,7 +47,7 @@ class stdfile:
         """
 
         # Creating a tarfile object, and then adding the path to the tarfile object.
-        with tarfile.open(archive_name, tarmode) as tar:
+        with tarfile.open(archive_name, "w:xz") as tar:
             tar.add(path, arcname=os.path.basename(path))
 
     def unarchive(archive_name: str, output_path: str):
@@ -54,7 +61,7 @@ class stdfile:
         :type output_path: str
         """
         # Opening the archive, extracting all the files to the output path, and then closing the archive.
-        with closing(tarfile.open(archive_name, f"r:xz")) as archive_name:
+        with closing(tarfile.open(archive_name, f"r:xz")) as archive:
             archive.extractall(path=output_path)
         
 
